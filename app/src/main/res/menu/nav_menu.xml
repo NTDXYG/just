@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<group android:checkableBehavior="single"
+    android:id="@+id/group1">
+    <item
+        android:id="@+id/nav_diy"
+        android:icon="@drawable/nav_food"
+        android:title="美食DIY" />
+
+    <item
+        android:id="@+id/nav_location"
+        android:icon="@drawable/nav_location"
+        android:title="我的位置" />
+
+    <item
+        android:id="@+id/nav_love"
+        android:icon="@drawable/nav_love"
+        android:title="我的收藏" />
+    <item
+        android:id="@+id/nav_message"
+        android:icon="@drawable/nav_message"
+        android:title="我的课设" />
+    <item
+        android:id="@+id/nav_changetheme"
+        android:icon="@drawable/nav_changetheme"
+        android:title="更换主题" />
+    <item
+        android:id="@+id/nav_exit"
+        android:icon="@drawable/nav_exit"
+        android:title="退出登录" />
+</group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/group2">
+        <item
+            android:icon="@drawable/contact"
+            android:id="@+id/contact"
+            android:title="联系作者"/>
+        <item
+            android:icon="@drawable/banben"
+            android:id="@+id/banben"
+            android:title="检查更新"/>
+    </group>
+</menu>
