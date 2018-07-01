@@ -8,6 +8,11 @@
         android:title="美食DIY" />
 
     <item
+        android:id="@+id/tuling"
+        android:icon="@drawable/nav_tuling"
+        android:title="智能聊天" />
+
+    <item
         android:id="@+id/nav_location"
         android:icon="@drawable/nav_location"
         android:title="我的位置" />
@@ -24,10 +29,7 @@
         android:id="@+id/nav_changetheme"
         android:icon="@drawable/nav_changetheme"
         android:title="更换主题" />
-    <item
-        android:id="@+id/nav_exit"
-        android:icon="@drawable/nav_exit"
-        android:title="退出登录" />
+
 </group>
     <group android:checkableBehavior="single"
         android:id="@+id/group2">
@@ -39,5 +41,9 @@
             android:icon="@drawable/banben"
             android:id="@+id/banben"
             android:title="检查更新"/>
+        <item
+            android:id="@+id/nav_exit"
+            android:icon="@drawable/nav_exit"
+            android:title="退出登录" />
     </group>
 </menu>

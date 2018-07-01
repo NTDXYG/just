@@ -19,6 +19,7 @@
     </style>
 
     <style name="UserActivityTheme" parent="AppTheme"></style>
+
     <style name="UserActivityNightTheme" parent="AppThemeNight"></style>
 
 </resources>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="10dp">
+    <LinearLayout
+        android:id="@+id/left_layout"
+        android:layout_gravity="left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/tuling_touxiang"/>
+        <com.github.library.bubbleview.BubbleTextVew
+            android:layout_marginTop="10dp"
+            android:id="@+id/tv_left_text"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Hello BubbleTextVew"
+            android:padding="10dp"
+            android:textColor="@android:color/white"
+            app:arrowWidth="8dp"
+            app:angle="8dp"
+            app:arrowHeight="10dp"
+            app:arrowPosition="14dp"
+            app:arrowLocation="left"
+            app:bubbleColor="#7EC0EE"/>
+        <ImageView
+            android:id="@+id/bofang_left"
+            android:layout_marginTop="13dp"
+            android:src="@drawable/bofang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/right_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right">
+        <ImageView
+            android:id="@+id/bofang_right"
+            android:layout_marginTop="13dp"
+            android:src="@drawable/bofang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <com.github.library.bubbleview.BubbleTextVew
+            android:layout_marginTop="10dp"
+            android:id="@+id/tv_right_text"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Hello BubbleTextVew"
+            android:padding="10dp"
+            android:textColor="@android:color/white"
+            app:arrowWidth="8dp"
+            app:angle="8dp"
+            app:arrowHeight="10dp"
+            app:arrowPosition="14dp"
+            app:arrowLocation="right"
+            app:bubbleColor="#7EC0EE"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/user"/>
+    </LinearLayout>
+</LinearLayout>

@@ -284,6 +284,10 @@ public class MainActivity extends BaseActivity implements OnBannerListener {
                                 recreate();
                             }
                             break;
+                        case R.id.tuling:
+                            Intent intent2 = new Intent(MainActivity.this,TulingActivity.class);
+                            startActivity(intent2);
+                            break;
                         case R.id.nav_message:
                             AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
                             dialog.setTitle("嘿呀");
@@ -342,8 +346,8 @@ public class MainActivity extends BaseActivity implements OnBannerListener {
                             dialog.show();
                             break;
                         case R.id.nav_love:
-                            Intent intent2 = new Intent(MainActivity.this, LoveActivity.class);
-                            startActivity(intent2);
+                            Intent intent3 = new Intent(MainActivity.this, LoveActivity.class);
+                            startActivity(intent3);
                             break;
                         case R.id.nav_exit:
                             isLogin = false;
