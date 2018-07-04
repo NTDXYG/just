@@ -6,4 +6,13 @@
     <color name="colorPrimaryLight">#BBDEFB</color>
     <color name="colorTextPrimary">#212121</color>
     <color name="background">#fff</color>
+    <color name="colorSplashBackground">#0E80C6</color>
+    <color name="colorLogin">#0980C3</color>
+    <color name="colorLoginButton">#004684</color>
+    <color name="colorCursor">#cccccc</color>
+    <color name="head_color">#836FFF</color>
+    <color name="information_title_color">#666666</color>
+    <color name="list_bg_color">#FFF4F4F4</color>
+    <color name="list_focus_color">#bdbdbd</color>
+    <color name="logoScreenBackground">#F7F7F7</color>
 </resources>

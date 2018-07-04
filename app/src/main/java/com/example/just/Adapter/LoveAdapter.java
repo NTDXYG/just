@@ -12,7 +12,9 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.just.Avtivity.DetailActivity;
+import com.example.just.Avtivity.TaobaoDetailActivity;
 import com.example.just.Bean.Story;
+import com.example.just.Bean.Taobao;
 import com.example.just.R;
 
 import java.util.ArrayList;
@@ -25,12 +27,14 @@ import java.util.List;
 public class LoveAdapter extends RecyclerView.Adapter<LoveAdapter.ViewHolder> {
 
     private Context mContext;
-    private List<Story> mStoryList = new ArrayList<>();
-    static class ViewHolder extends RecyclerView.ViewHolder{
+    private List<Taobao> mTaobaoList = new ArrayList<>();
+
+    static class ViewHolder extends RecyclerView.ViewHolder {
         CardView cardView;
         ImageView storyImage;
         TextView storyName;
-        public ViewHolder(View view){
+
+        public ViewHolder(View view) {
             super(view);
             cardView = (CardView) view;
             storyImage = (ImageView) view.findViewById(R.id.love_image);
@@ -38,15 +42,15 @@ public class LoveAdapter extends RecyclerView.Adapter<LoveAdapter.ViewHolder> {
         }
     }
 
-    public LoveAdapter(List<Story> storyList){
+    public LoveAdapter(List<Taobao> taobaoList) {
 
-        mStoryList.clear();
-        mStoryList = storyList;
+        mTaobaoList.clear();
+        mTaobaoList = taobaoList;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        if (mContext == null){
+        if (mContext == null) {
             mContext = parent.getContext();
         }
         View view = LayoutInflater.from(mContext).inflate(R.layout.love_item,
@@ -56,11 +60,21 @@ public class LoveAdapter extends RecyclerView.Adapter<LoveAdapter.ViewHolder> {
             @Override
             public void onClick(View view) {
                 int position = holder.getAdapterPosition();
-                Story story = mStoryList.get(position);
-                Intent intent = new Intent(mContext, DetailActivity.class);
-                intent.putExtra("image",story.getImage());
-                intent.putExtra("url",story.getUrl());
-                intent.putExtra("title",story.getName());
+                Taobao taobao = mTaobaoList.get(position);
+                Intent intent;
+                if (taobao.getImg().contains("alicdn.com")) {
+                    intent = new Intent(mContext, TaobaoDetailActivity.class);
+                } else {
+                    intent = new Intent(mContext, DetailActivity.class);
+                }
+                intent.putExtra("image", taobao.getImg());
+                intent.putExtra("url", taobao.getUrl());
+                intent.putExtra("title", taobao.getTitle());
+                intent.putExtra("priceWap", taobao.getPriceWap());
+                intent.putExtra("priceWithRate", taobao.getPriceWithRate());
+                intent.putExtra("nick", taobao.getNick());
+                intent.putExtra("sold", taobao.getSold());
+                intent.putExtra("numiid", taobao.getNumiid());
                 mContext.startActivity(intent);
             }
         });
@@ -69,14 +83,15 @@ public class LoveAdapter extends RecyclerView.Adapter<LoveAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Story story = mStoryList.get(position);
-        holder.storyName.setText(story.getName());
-        Glide.with(mContext).load(story.getImage()).into(holder.storyImage);
+        Taobao taobao = mTaobaoList.get(position);
+        holder.storyName.setText(taobao.getTitle());
+        Glide.with(mContext).load(taobao.getImg()).into(holder.storyImage);
+
     }
 
 
     @Override
     public int getItemCount() {
-        return mStoryList.size();
+        return mTaobaoList.size();
     }
 }

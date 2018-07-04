@@ -1,13 +1,10 @@
 package com.example.just.Avtivity;
 
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
@@ -15,7 +12,6 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.just.Adapter.DIYAdapter;
-import com.example.just.Adapter.LoveAdapter;
 import com.example.just.Bean.Story;
 import com.example.just.R;
 import com.google.gson.Gson;

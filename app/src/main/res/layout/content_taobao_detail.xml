@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.just.Avtivity.TaobaoDetailActivity"
+    tools:showIn="@layout/activity_taobao_detail">
+    <com.youth.banner.Banner xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/taobao_banner"
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        app:layout_scrollFlags="scroll" />
+    <View
+        android:background="#F5F5F5"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="价格：￥"
+            android:gravity="center_vertical|right"
+            android:textSize="14sp"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/taobao_priceWap"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textSize="14sp"
+            android:gravity="center_vertical|left"
+            android:layout_height="match_parent" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textColor="#FF4500"
+            android:gravity="center_vertical|right"
+            android:text="折扣价："
+            android:textSize="14sp"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/taobao_priceWithRate"
+            android:textColor="#FF4500"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical|left"
+            android:textSize="14sp"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <View
+        android:background="#F5F5F5"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"/>
+    <TextView
+        android:text="标题"
+        android:textStyle="bold"
+        android:layout_margin="10dp"
+        android:id="@+id/taobao_title"
+        android:textSize="15sp"
+        android:gravity="left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <View
+        android:background="#F5F5F5"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="35dp">
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:gravity="right|center_vertical"
+            android:text="已出售"
+            android:textSize="14sp"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/taobao_sold"
+            android:layout_weight="1"
+            android:textSize="14sp"
+            android:gravity="center_vertical|left"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/taobao_nick"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+    <View
+        android:background="#F5F5F5"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+
+    <Button
+        android:id="@+id/goumai"
+        android:layout_gravity="center"
+        android:text="购买"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content" />
+</LinearLayout>

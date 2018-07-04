@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.example.just.Adapter.LoveAdapter;
 import com.example.just.Adapter.StoryAdapter;
 import com.example.just.Bean.Story;
+import com.example.just.Bean.Taobao;
 import com.example.just.DB.MyDatabaseHelper;
 import com.example.just.R;
 import com.google.gson.Gson;
@@ -38,8 +39,8 @@ public class LoveActivity extends BaseActivity {
     private RecyclerView recyclerView;
     private LoveAdapter adapter;
     public Handler handler;
-    public List<Story> loveList = new ArrayList<>();
-    public MyDatabaseHelper dbHelper  = new MyDatabaseHelper(this, "Love.db", null, 1);;
+    public List<Taobao> loveList = new ArrayList<>();
+    public MyDatabaseHelper dbHelper  = new MyDatabaseHelper(this, "Love.db", null, 1);
 
     private void getList(){
         new Thread(new Runnable() {

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_love"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.example.just.Avtivity.LoveActivity">
+
+    <android.support.design.widget.CoordinatorLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:background="@drawable/rectangle_edittext">
+
+                <ImageView
+                    android:id="@+id/yuyinshuru"
+                    android:src="@drawable/yuyin"
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+
+                <View
+                    android:layout_width="1dip"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:background="@color/colorCursor" />
+
+                <EditText
+                    android:id="@+id/edit_taobao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:hint="输入" />
+
+                <Button
+                    android:id="@+id/btn_search"
+                    android:layout_width="66dp"
+                    android:layout_height="36dp"
+                    android:layout_margin="5dp"
+                    android:background="#444444"
+                    android:text="查询"
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+
+            <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/taobao_refresh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/taobao_rview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+            </android.support.v4.widget.SwipeRefreshLayout>
+        </LinearLayout>
+
+
+
+
+
+    </android.support.design.widget.CoordinatorLayout>
+</RelativeLayout>

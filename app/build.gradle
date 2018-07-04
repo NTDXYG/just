@@ -28,6 +28,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:26.+'
     testCompile 'junit:junit:4.12'
     compile 'com.lguipeng.bubbleview:library:1.0.0'
+    compile 'com.github.medyo:android-about-page:1.2.4'
     compile 'org.litepal.android:core:1.4.1'
     compile 'com.android.support:design:26.+'
     compile 'de.hdodenhof:circleimageview:2.1.0'

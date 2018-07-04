@@ -2,4 +2,6 @@
     <string name="app_name">Just</string>
     <string name="title_activity_detail">DetailActivity</string>
     <string name="title_activity_tuling">TulingActivity</string>
+    <string name="title_activity_taobao">TaobaoActivity</string>
+    <string name="title_activity_taobao_detail">TaobaoDetailActivity</string>
 </resources>

@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.example.just.Bean.Story;
+import com.example.just.Bean.Taobao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +22,12 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
             "id integer primary key autoincrement," +
             "name text," +
             "image text," +
-            "url text)";
+            "url text," +
+            "priceWap text," +
+            "priceWithRate text," +
+            "nick text," +
+            "numiid text," +
+            "sold text)";
 
     private Context mContext;
 
@@ -40,18 +46,23 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public void addData(String name, String image, String url) {
+    public void addData(String name, String image, String url,String priceWap,String priceWithRate,String nick,String sold,String numiid) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("name", name);
         values.put("image", image);
         values.put("url", url);
+        values.put("priceWap", priceWap);
+        values.put("priceWithRate", priceWithRate);
+        values.put("nick", nick);
+        values.put("numiid", numiid);
+        values.put("sold", sold);
         db.insert("Love", null, values);
         values.clear();
     }
 
-    public List<Story> queryData() {
-        List<Story> loveList = new ArrayList<>();
+    public List<Taobao> queryData() {
+        List<Taobao> loveList = new ArrayList<>();
         SQLiteDatabase db = getWritableDatabase();
         Cursor cursor = db.query("Love", null, null, null, null, null, null);
         if (cursor.moveToFirst()) {
@@ -59,7 +70,12 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
                 String name = cursor.getString(cursor.getColumnIndex("name"));
                 String image = cursor.getString(cursor.getColumnIndex("image"));
                 String url = cursor.getString(cursor.getColumnIndex("url"));
-                loveList.add(new Story(name, url, image, true));
+                String priceWap = cursor.getString(cursor.getColumnIndex("priceWap"));
+                String priceWithRate = cursor.getString(cursor.getColumnIndex("priceWithRate"));
+                String nick = cursor.getString(cursor.getColumnIndex("nick"));
+                String sold = cursor.getString(cursor.getColumnIndex("sold"));
+                String numiid = cursor.getString(cursor.getColumnIndex("numiid"));
+                loveList.add(new Taobao(name, image, priceWap,priceWithRate,nick,sold,url,numiid));
             } while (cursor.moveToNext());
         }
         cursor.close();
@@ -78,19 +94,23 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     }
     
     public boolean isExist(String name){
-        Story story = null;
+        Taobao taobao = null;
         SQLiteDatabase db = getWritableDatabase();
         Cursor cursor = db.query("Love", null, "name = "+ "'"+name+"'", null, null, null, null);
         if (cursor.moveToFirst()) {
             do {
-                String name1 = cursor.getString(cursor.getColumnIndex("name"));
                 String image = cursor.getString(cursor.getColumnIndex("image"));
                 String url = cursor.getString(cursor.getColumnIndex("url"));
-                story = new Story(name, url, image, true);
+                String priceWap = cursor.getString(cursor.getColumnIndex("priceWap"));
+                String priceWithRate = cursor.getString(cursor.getColumnIndex("priceWithRate"));
+                String nick = cursor.getString(cursor.getColumnIndex("nick"));
+                String sold = cursor.getString(cursor.getColumnIndex("sold"));
+                String numiid = cursor.getString(cursor.getColumnIndex("numiid"));
+                taobao = new Taobao(name, image, priceWap,priceWithRate,nick,sold,url,numiid);
             } while (cursor.moveToNext());
         }
         cursor.close();
-        if (story != null){
+        if (taobao != null){
             return true;
         }else {
             return false;

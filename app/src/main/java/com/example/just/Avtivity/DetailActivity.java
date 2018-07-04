@@ -11,8 +11,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
 
 import com.example.just.DB.MyDatabaseHelper;
 import com.example.just.R;
@@ -39,6 +41,7 @@ public class DetailActivity extends AppCompatActivity {
         setTitle(intent.getStringExtra("title"));
         url = intent.getStringExtra("url");
         title = intent.getStringExtra("title");
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
@@ -65,7 +68,7 @@ public class DetailActivity extends AppCompatActivity {
                                 }).show();
                     } else {
                         fab.setImageResource(R.drawable.islove);
-                        dbHelper.addData(intent.getStringExtra("title"), intent.getStringExtra("image"), intent.getStringExtra("url"));
+                        dbHelper.addData(intent.getStringExtra("title"), intent.getStringExtra("image"), intent.getStringExtra("url"),"","","","","");
                         Snackbar.make(view, "收藏成功！", Snackbar.LENGTH_LONG)
                                 .setAction("确定", new View.OnClickListener() {
                                     @Override
@@ -84,7 +87,7 @@ public class DetailActivity extends AppCompatActivity {
                     if (!isOnclick){
                         fab.setImageResource(R.drawable.islove);
                         //收藏
-                        dbHelper.addData(intent.getStringExtra("title"), intent.getStringExtra("image"), intent.getStringExtra("url"));
+                        dbHelper.addData(intent.getStringExtra("title"), intent.getStringExtra("image"), intent.getStringExtra("url"),"","","","","");
                         Snackbar.make(view, "收藏成功！", Snackbar.LENGTH_LONG)
                                 .setAction("确定", new View.OnClickListener() {
                                     @Override
@@ -109,10 +112,11 @@ public class DetailActivity extends AppCompatActivity {
             });
         }
 
-
         WebView webView = (WebView) findViewById(R.id.web_view);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setDomStorageEnabled(true);
         webView.loadUrl(intent.getStringExtra("url"));
     }
 

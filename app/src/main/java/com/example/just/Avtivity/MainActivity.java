@@ -288,62 +288,9 @@ public class MainActivity extends BaseActivity implements OnBannerListener {
                             Intent intent2 = new Intent(MainActivity.this,TulingActivity.class);
                             startActivity(intent2);
                             break;
-                        case R.id.nav_message:
-                            AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
-                            dialog.setTitle("嘿呀");
-                            dialog.setMessage("做我女朋友吧");
-                            dialog.setCancelable(false);
-                            dialog.setPositiveButton("好呀", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialogInterface, int i) {
-                                    AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
-                                    dialog.setTitle("Nice");
-                                    dialog.setMessage("爱你，mua~");
-                                    dialog.setCancelable(true);
-                                    dialog.show();
-                                }
-                            });
-                            dialog.setNegativeButton("不行", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialogInterface, int i) {
-                                    AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
-                                    dialog.setTitle("嘿呀");
-                                    dialog.setMessage("房产证写你名字呢");
-                                    dialog.setCancelable(false);
-                                    dialog.setPositiveButton("嗯...", new DialogInterface.OnClickListener() {
-                                        @Override
-                                        public void onClick(DialogInterface dialogInterface, int i) {
-                                            AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
-                                            dialog.setTitle("嘿呀");
-                                            dialog.setMessage("我妈会游泳呢");
-                                            dialog.setCancelable(false);
-                                            dialog.setPositiveButton("嗯...", new DialogInterface.OnClickListener() {
-                                                @Override
-                                                public void onClick(DialogInterface dialogInterface, int i) {
-                                                    AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
-                                                    dialog.setTitle("嘿呀");
-                                                    dialog.setMessage("保大保大！");
-                                                    dialog.setCancelable(false);
-                                                    dialog.setPositiveButton("同意了~", new DialogInterface.OnClickListener() {
-                                                        @Override
-                                                        public void onClick(DialogInterface dialogInterface, int i) {
-                                                            AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
-                                                            dialog.setTitle("Nice");
-                                                            dialog.setMessage("爱你，mua~");
-                                                            dialog.setCancelable(true);
-                                                            dialog.show();
-                                                        }
-                                                    });
-                                                    dialog.show();
-                                                }
-                                            });
-                                            dialog.show();
-                                        }
-                                    });
-                                    dialog.show();
-                                }
-                            });
-                            dialog.show();
+                        case R.id.tianqi:
+                            Intent tianqi = new Intent(MainActivity.this,WeatherActivity.class);
+                            startActivity(tianqi);
                             break;
                         case R.id.nav_love:
                             Intent intent3 = new Intent(MainActivity.this, LoveActivity.class);
@@ -475,13 +422,18 @@ public class MainActivity extends BaseActivity implements OnBannerListener {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.tianqi:
-                Intent intent1 = new Intent(this,WeatherActivity.class);
-                startActivity(intent1);
+            case R.id.taobao:
+                Intent taobaoIntent = new Intent(this,TaobaoActivity.class);
+                startActivity(taobaoIntent);
                 break;
             case R.id.settings:
                 Intent intent = new Intent(Settings.ACTION_SETTINGS);
                 startActivity(intent);
+                //启动设置activity
+                break;
+            case R.id.about:
+                Intent intent_about = new Intent(this,AboutActivity.class);
+                startActivity(intent_about);
                 //启动设置activity
                 break;
             case android.R.id.home:

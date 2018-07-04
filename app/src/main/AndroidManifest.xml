@@ -25,12 +25,12 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <!-- 获取wifi状态 -->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <!--获取手机录音机使用权限，听写、识别、语义理解需要用到此权限 -->
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-    <!--配置权限，用来记录应用配置信息 -->
-    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
-    <!--如需使用人脸识别，还要添加：摄相头权限，拍照需要用到 -->
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <!-- 获取手机录音机使用权限，听写、识别、语义理解需要用到此权限 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- 配置权限，用来记录应用配置信息 -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <!-- 如需使用人脸识别，还要添加：摄相头权限，拍照需要用到 -->
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:name="org.litepal.LitePalApplication"
@@ -60,6 +60,7 @@
         <activity android:name=".Avtivity.LoginActivity" />
         <activity android:name=".Avtivity.DIYActivity" />
         <activity android:name=".Avtivity.BaiduActivity" />
+        <activity android:name=".Avtivity.AboutActivity" />
 
         <service
             android:name="com.baidu.location.f"
@@ -81,6 +82,14 @@
         <activity
             android:name=".Avtivity.TulingActivity"
             android:label="@string/title_activity_tuling"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Avtivity.TaobaoActivity"
+            android:label="@string/title_activity_taobao"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Avtivity.TaobaoDetailActivity"
+            android:label="@string/title_activity_taobao_detail"
             android:theme="@style/AppTheme"></activity>
     </application>
 

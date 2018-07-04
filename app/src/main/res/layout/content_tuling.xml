@@ -18,18 +18,29 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:gravity="center_vertical"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="@drawable/rectangle_edittext">
 
         <ImageView
             android:id="@+id/yuyinshuru"
             android:src="@drawable/yuyin"
+            android:layout_marginLeft="5dp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent" />
+
+        <View
+            android:layout_width="1dip"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:background="@color/colorCursor" />
+
         <EditText
             android:id="@+id/tuling_et_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textCursorDrawable="@drawable/color_cursor"
             android:hint="输入" />
 
         <Button

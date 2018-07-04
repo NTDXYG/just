@@ -22,9 +22,9 @@
         android:icon="@drawable/nav_love"
         android:title="我的收藏" />
     <item
-        android:id="@+id/nav_message"
-        android:icon="@drawable/nav_message"
-        android:title="我的课设" />
+        android:id="@+id/tianqi"
+        android:icon="@drawable/tianqi"
+        android:title="天气查询" />
     <item
         android:id="@+id/nav_changetheme"
         android:icon="@drawable/nav_changetheme"

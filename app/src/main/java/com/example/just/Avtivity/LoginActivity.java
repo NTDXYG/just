@@ -9,8 +9,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.example.just.Bean.Person;
+import com.example.just.Http.EditTextClearTools;
 import com.example.just.Http.HttpUtil;
 import com.example.just.R;
 import com.google.gson.Gson;
@@ -38,12 +40,15 @@ public class LoginActivity extends BaseActivity{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        username = (EditText) findViewById(R.id.login_username);
-        password = (EditText) findViewById(R.id.login_password);
-        login_btn = (Button) findViewById(R.id.login_button);
-
+        username = (EditText) findViewById(R.id.et_userName);
+        password = (EditText) findViewById(R.id.et_password);
+        login_btn = (Button) findViewById(R.id.btn_login);
+        ImageView unameClear = (ImageView) findViewById(R.id.iv_unameClear);
+        ImageView pwdClear = (ImageView) findViewById(R.id.iv_pwdClear);
+        EditTextClearTools.addClearListener(username,unameClear);
+        EditTextClearTools.addClearListener(password,pwdClear);
         pref = PreferenceManager.getDefaultSharedPreferences(this);
-        rememberPass = (CheckBox) findViewById(R.id.login_rememberpassword);
+        rememberPass = (CheckBox) findViewById(R.id.cb_checkbox);
         boolean isRemember = pref.getBoolean("remember_password", false);
         if (isRemember){
             String account = pref.getString("account", "");
